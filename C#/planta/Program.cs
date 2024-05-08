@@ -25,7 +25,6 @@
                     Console.WriteLine("Opção inválida!");
                     break;
             }
-
         }
     }
 }
