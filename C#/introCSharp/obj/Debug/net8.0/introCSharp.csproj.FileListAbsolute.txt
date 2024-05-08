@@ -1,0 +1,14 @@
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\introCSharp\bin\Debug\net8.0\introCSharp.exe
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\introCSharp\bin\Debug\net8.0\introCSharp.deps.json
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\introCSharp\bin\Debug\net8.0\introCSharp.runtimeconfig.json
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\introCSharp\bin\Debug\net8.0\introCSharp.dll
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\introCSharp\bin\Debug\net8.0\introCSharp.pdb
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\introCSharp\obj\Debug\net8.0\introCSharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\introCSharp\obj\Debug\net8.0\introCSharp.AssemblyInfoInputs.cache
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\introCSharp\obj\Debug\net8.0\introCSharp.AssemblyInfo.cs
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\introCSharp\obj\Debug\net8.0\introCSharp.csproj.CoreCompileInputs.cache
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\introCSharp\obj\Debug\net8.0\introCSharp.dll
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\introCSharp\obj\Debug\net8.0\refint\introCSharp.dll
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\introCSharp\obj\Debug\net8.0\introCSharp.pdb
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\introCSharp\obj\Debug\net8.0\introCSharp.genruntimeconfig.cache
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\introCSharp\obj\Debug\net8.0\ref\introCSharp.dll

@@ -1,0 +1,14 @@
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\inseto\bin\Debug\net8.0\inseto.exe
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\inseto\bin\Debug\net8.0\inseto.deps.json
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\inseto\bin\Debug\net8.0\inseto.runtimeconfig.json
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\inseto\bin\Debug\net8.0\inseto.dll
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\inseto\bin\Debug\net8.0\inseto.pdb
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\inseto\obj\Debug\net8.0\inseto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\inseto\obj\Debug\net8.0\inseto.AssemblyInfoInputs.cache
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\inseto\obj\Debug\net8.0\inseto.AssemblyInfo.cs
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\inseto\obj\Debug\net8.0\inseto.csproj.CoreCompileInputs.cache
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\inseto\obj\Debug\net8.0\inseto.dll
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\inseto\obj\Debug\net8.0\refint\inseto.dll
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\inseto\obj\Debug\net8.0\inseto.pdb
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\inseto\obj\Debug\net8.0\inseto.genruntimeconfig.cache
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\inseto\obj\Debug\net8.0\ref\inseto.dll

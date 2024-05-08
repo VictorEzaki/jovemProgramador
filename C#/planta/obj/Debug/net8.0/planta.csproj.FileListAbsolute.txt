@@ -1,0 +1,14 @@
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\planta\bin\Debug\net8.0\planta.exe
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\planta\bin\Debug\net8.0\planta.deps.json
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\planta\bin\Debug\net8.0\planta.runtimeconfig.json
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\planta\bin\Debug\net8.0\planta.dll
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\planta\bin\Debug\net8.0\planta.pdb
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\planta\obj\Debug\net8.0\planta.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\planta\obj\Debug\net8.0\planta.AssemblyInfoInputs.cache
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\planta\obj\Debug\net8.0\planta.AssemblyInfo.cs
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\planta\obj\Debug\net8.0\planta.csproj.CoreCompileInputs.cache
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\planta\obj\Debug\net8.0\planta.dll
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\planta\obj\Debug\net8.0\refint\planta.dll
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\planta\obj\Debug\net8.0\planta.pdb
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\planta\obj\Debug\net8.0\planta.genruntimeconfig.cache
+C:\Users\Victo\OneDrive\Documentos\Jovem-Programador\C#\planta\obj\Debug\net8.0\ref\planta.dll
