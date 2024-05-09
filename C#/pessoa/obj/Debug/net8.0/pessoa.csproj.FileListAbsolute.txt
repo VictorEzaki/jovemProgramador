@@ -1,0 +1,14 @@
+C:\Users\victor.ezaki\Documents\C#\pessoa\bin\Debug\net8.0\pessoa.exe
+C:\Users\victor.ezaki\Documents\C#\pessoa\bin\Debug\net8.0\pessoa.deps.json
+C:\Users\victor.ezaki\Documents\C#\pessoa\bin\Debug\net8.0\pessoa.runtimeconfig.json
+C:\Users\victor.ezaki\Documents\C#\pessoa\bin\Debug\net8.0\pessoa.dll
+C:\Users\victor.ezaki\Documents\C#\pessoa\bin\Debug\net8.0\pessoa.pdb
+C:\Users\victor.ezaki\Documents\C#\pessoa\obj\Debug\net8.0\pessoa.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\victor.ezaki\Documents\C#\pessoa\obj\Debug\net8.0\pessoa.AssemblyInfoInputs.cache
+C:\Users\victor.ezaki\Documents\C#\pessoa\obj\Debug\net8.0\pessoa.AssemblyInfo.cs
+C:\Users\victor.ezaki\Documents\C#\pessoa\obj\Debug\net8.0\pessoa.csproj.CoreCompileInputs.cache
+C:\Users\victor.ezaki\Documents\C#\pessoa\obj\Debug\net8.0\pessoa.dll
+C:\Users\victor.ezaki\Documents\C#\pessoa\obj\Debug\net8.0\refint\pessoa.dll
+C:\Users\victor.ezaki\Documents\C#\pessoa\obj\Debug\net8.0\pessoa.pdb
+C:\Users\victor.ezaki\Documents\C#\pessoa\obj\Debug\net8.0\pessoa.genruntimeconfig.cache
+C:\Users\victor.ezaki\Documents\C#\pessoa\obj\Debug\net8.0\ref\pessoa.dll
