@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Victo\\OneDrive\\Documentos\\jovemProgramador\\C#\\planta\\planta.csproj",
+      "projectUniqueName": "E:\\Victo\\Documents\\jovemProgramador\\C#\\planta\\planta.csproj",
       "projectName": "planta",
-      "projectPath": "C:\\Users\\Victo\\OneDrive\\Documentos\\jovemProgramador\\C#\\planta\\planta.csproj",
+      "projectPath": "E:\\Victo\\Documents\\jovemProgramador\\C#\\planta\\planta.csproj",
       "packagesPath": "C:\\Users\\Victo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Victo\\OneDrive\\Documentos\\jovemProgramador\\C#\\planta\\obj\\",
+      "outputPath": "E:\\Victo\\Documents\\jovemProgramador\\C#\\planta\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Victo\\AppData\\Roaming\\NuGet\\NuGet.Config"
