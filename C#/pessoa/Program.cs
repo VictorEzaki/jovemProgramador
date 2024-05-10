@@ -20,13 +20,13 @@
                 switch (op)
                 {
                     case 1:
-                        Cadastrar();
+                        CadastrarNome();
                         break;
                     case 2:
                         LerNomes();
                         break;
                     case 3:
-                        Update();
+                        AlterarNome();
                         break;
                     case 4:
                         Delete();
@@ -41,20 +41,22 @@
             } while (op != 5);
         }
         
-        static void Cadastrar()
+        static void CadastrarNome()
         {
             Console.Write("Digite um nome: ");
             string nome = Console.ReadLine() ?? "";
             itens.Add(nome);
+            Console.WriteLine("----------------------------");
             Console.WriteLine($"O nome: {nome}, foi cadastrado com sucesso.");
+            Console.WriteLine("----------------------------");
         }
         
         static void LerNomes()
         {
-            foreach (string item in itens)
-            {
-                Console.WriteLine(item);
-            }
+            // foreach (string item in itens)
+            // {
+            //     Console.WriteLine(item);
+            // }
             
             // FORMA MAIS SIMPLES 
             // itens.foreach(Console.WriteLine);
@@ -62,6 +64,19 @@
             // itens.foreach(item => {
             // console.WriteLine(item); 
             // })
+
+            if (itens.Count > 0)
+            {
+                Console.WriteLine("----------- Nomes ----------");
+                itens.ForEach(Console.WriteLine);
+                Console.WriteLine("----------------------------");
+            }
+            else
+            {
+                Console.WriteLine("----------- Nomes ----------");
+                Console.WriteLine("Lista de nome está vazia.");
+                Console.WriteLine("----------------------------");
+            }
         }
 
         static void Delete()
@@ -69,12 +84,36 @@
             Console.Write("Informe o índice que deseja deletar: ");
             int indice = Convert.ToInt32(Console.ReadLine());
 
-            itens.RemoveAt(indice);
+            if (indice >= 0 && indice < itens.Count)
+            {
+                itens.RemoveAt(indice-1);
+                Console.WriteLine("Nome deletado com sucesso!");
+            }
+            else
+            {
+                Console.WriteLine("Índice inválido!");
+            }
         }
 
-        static void Update()
+        static void AlterarNome()
         {
+            Console.Write("Informe o índice que deseja alterar: ");
+            int indice = Convert.ToInt32(Console.ReadLine());
 
+            if (indice >= 0 && indice < itens.Count)
+            {
+                Console.Write("Digite o novo nome: ");
+                string novoNome = Console.ReadLine() ?? "";
+                string nomeAntigo = itens[indice];
+                itens[indice] = novoNome;
+                Console.WriteLine("-------------------------------------------------");
+                Console.WriteLine($"Nome alterado {nomeAntigo} para {novoNome} com sucesso!");
+                Console.WriteLine("-------------------------------------------------");
+            }
+            else
+            {
+                Console.WriteLine("Índice inválido!");
+            }
         }
     }
 }
