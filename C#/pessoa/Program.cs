@@ -81,17 +81,34 @@
 
         static void Delete()
         {
-            Console.Write("Informe o índice que deseja deletar: ");
+            Console.WriteLine("Informe o índice que deseja deletar: ");
+            if (itens.Count > 0)
+            {
+                Console.WriteLine("----------- Nomes ----------");
+                itens.ForEach(Console.WriteLine);
+                Console.WriteLine("----------------------------");
+            }
+            else
+            {
+                Console.WriteLine("----------- Nomes ----------");
+                Console.WriteLine("Lista de nome está vazia.");
+                Console.WriteLine("----------------------------");
+            }
             int indice = Convert.ToInt32(Console.ReadLine());
 
             if (indice >= 0 && indice < itens.Count)
             {
-                itens.RemoveAt(indice-1);
-                Console.WriteLine("Nome deletado com sucesso!");
+                string nmDel = itens[indice];
+                itens.RemoveAt(indice);
+                Console.WriteLine("----------------------------");
+                Console.WriteLine($"Nome: {nmDel} foi deletado com sucesso!");
+                Console.WriteLine("----------------------------");
             }
             else
             {
+                Console.WriteLine("----------------------------");
                 Console.WriteLine("Índice inválido!");
+                Console.WriteLine("----------------------------");
             }
         }
 
