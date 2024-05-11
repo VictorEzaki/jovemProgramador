@@ -79,14 +79,24 @@
 
         static void Delete()
         {
-            Console.WriteLine("Informe o índice que deseja deletar: ");
-            LerNomes();
-            int indice = Convert.ToInt32(Console.ReadLine());
+            int indice;
+            string certeza = "";
+
+            do
+            {
+                Console.WriteLine("Informe o índice que deseja deletar: ");
+                LerNomes();
+                indice = Convert.ToInt32(Console.ReadLine()) -1;
+                string nome = itens[indice];
+                Console.WriteLine($"Você tem certeza que deseja excluir o nome {nome} (s/n)?");
+                certeza = Console.ReadLine();
+
+            } while(certeza == "n");
 
             if (indice >= 0 && indice <= itens.Count)
             {
-                string nomeDel = itens[indice-1];
-                itens.RemoveAt(indice-1);
+                string nomeDel = itens[indice];
+                itens.RemoveAt(indice);
                 Console.WriteLine("----------------------------------------------");
                 Console.WriteLine($"Nome {nomeDel} foi deletado com sucesso!");
                 Console.WriteLine("----------------------------------------------");
@@ -101,16 +111,27 @@
 
         static void AlterarNome()
         {
-            Console.WriteLine("Informe o índice que deseja alterar: ");
-            LerNomes();
-            int indice = Convert.ToInt32(Console.ReadLine());
+            string certeza = "";
+            int indice;
+
+            do
+            {
+                Console.WriteLine("Informe o índice que deseja alterar: ");
+                LerNomes();
+                indice = Convert.ToInt32(Console.ReadLine()) - 1;
+
+                string nome = "";
+                Console.WriteLine($"Você tem certeza que deseja alterar o nome {nome} (s/n)?");
+                certeza = Console.ReadLine();
+
+            } while(certeza == "n");
 
             if (indice >= 0 && indice <= itens.Count)
             {
                 Console.Write("Digite o novo nome: ");
                 string novoNome = Console.ReadLine() ?? "";
-                string nomeAntigo = itens[indice-1];
-                itens[indice-1] = novoNome;
+                string nomeAntigo = itens[indice];
+                itens[indice] = novoNome;
                 Console.WriteLine("------------------------------------------------------------");
                 Console.WriteLine($"Nome alterado {nomeAntigo} para {novoNome} com sucesso!");
                 Console.WriteLine("------------------------------------------------------------");
