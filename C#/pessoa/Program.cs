@@ -1,10 +1,10 @@
-﻿namespace objeto 
+﻿namespace objeto
 {
-    public class Program 
+    public class Program
     {
         static List<string> itens = new List<string>(); // ou somente []
 
-        public static void Main() 
+        public static void Main()
         {
             int op = 0;
 
@@ -40,24 +40,19 @@
                 }
             } while (op != 5);
         }
-        
+
         static void CadastrarNome()
         {
             Console.Write("Digite um nome: ");
             string nome = Console.ReadLine() ?? "";
             itens.Add(nome);
-            Console.WriteLine("----------------------------");
+            Console.WriteLine("------------------------------------------------");
             Console.WriteLine($"O nome: {nome}, foi cadastrado com sucesso.");
-            Console.WriteLine("----------------------------");
+            Console.WriteLine("------------------------------------------------");
         }
-        
+
         static void LerNomes()
         {
-            // foreach (string item in itens)
-            // {
-            //     Console.WriteLine(item);
-            // }
-            
             // FORMA MAIS SIMPLES 
             // itens.foreach(Console.WriteLine);
 
@@ -68,7 +63,10 @@
             if (itens.Count > 0)
             {
                 Console.WriteLine("----------- Nomes ----------");
-                itens.ForEach(Console.WriteLine);
+                foreach (string item in itens)
+                {
+                    Console.WriteLine((itens.IndexOf(item) + 1) + " - " + item);
+                }
                 Console.WriteLine("----------------------------");
             }
             else
@@ -81,34 +79,41 @@
 
         static void Delete()
         {
-            Console.Write("Informe o índice que deseja deletar: ");
+            Console.WriteLine("Informe o índice que deseja deletar: ");
+            LerNomes();
             int indice = Convert.ToInt32(Console.ReadLine());
 
-            if (indice >= 0 && indice < itens.Count)
+            if (indice >= 0 && indice <= itens.Count)
             {
+                string nomeDel = itens[indice-1];
                 itens.RemoveAt(indice-1);
-                Console.WriteLine("Nome deletado com sucesso!");
+                Console.WriteLine("----------------------------------------------");
+                Console.WriteLine($"Nome {nomeDel} foi deletado com sucesso!");
+                Console.WriteLine("----------------------------------------------");
             }
             else
             {
+                Console.WriteLine("----------------------");
                 Console.WriteLine("Índice inválido!");
+                Console.WriteLine("----------------------");
             }
         }
 
         static void AlterarNome()
         {
-            Console.Write("Informe o índice que deseja alterar: ");
+            Console.WriteLine("Informe o índice que deseja alterar: ");
+            LerNomes();
             int indice = Convert.ToInt32(Console.ReadLine());
 
-            if (indice >= 0 && indice < itens.Count)
+            if (indice >= 0 && indice <= itens.Count)
             {
                 Console.Write("Digite o novo nome: ");
                 string novoNome = Console.ReadLine() ?? "";
-                string nomeAntigo = itens[indice];
-                itens[indice] = novoNome;
-                Console.WriteLine("-------------------------------------------------");
+                string nomeAntigo = itens[indice-1];
+                itens[indice-1] = novoNome;
+                Console.WriteLine("------------------------------------------------------------");
                 Console.WriteLine($"Nome alterado {nomeAntigo} para {novoNome} com sucesso!");
-                Console.WriteLine("-------------------------------------------------");
+                Console.WriteLine("------------------------------------------------------------");
             }
             else
             {
