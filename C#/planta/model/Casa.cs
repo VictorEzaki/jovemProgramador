@@ -5,15 +5,14 @@ namespace planta {
         public override void Construir()
         {
             base.Construir();
-            Console.WriteLine($"E a {Construtora}, estará responsável pela construção de sua casa, Com {NumQuartos} quartos, {NumSuites} suítes, {NumBanheiros} banheiros e uma garagem com {VagasGaragem} vagas.");
+            Console.WriteLine($"E a {Construtora}, estará responsável pela construção de sua casa, \nCom {NumQuartos} quartos, {NumSuites} suítes, {NumBanheiros} banheiros e uma garagem com {VagasGaragem} vagas.");
         }
         public override void Coleta()
         {
             base.Coleta();
-            Console.Write("Será necessária quantas vagas na caragem? ");
+            Console.Write("Será necessária quantas vagas na garagem? ");
             VagasGaragem = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("------------------------------------------------------------------------------");
-
             Construir();
             Console.WriteLine("------------------------------------------------------------------------------");
         }
