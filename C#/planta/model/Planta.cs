@@ -1,6 +1,6 @@
 namespace planta {
     public class Planta {
-        public string Dono {get; set;}
+        public string Dono {get; set;} = "Sem dono";
         public int NumQuartos {get; set;}
         public int NumSuites {get; set;}
         public int NumBanheiros {get; set;}
@@ -11,10 +11,9 @@ namespace planta {
         {
             Console.Write("Sua planta ja está sendo feita.\n");
         }
+
         public void InfoBasica()
         {
-            Console.Write("Qual o seu nome? ");
-            Dono = Console.ReadLine() ?? "";
             do
             {
                 Console.WriteLine($"{Dono}, você deseja construir uma [1]casa ou [2]apartamento? obs.: Digite 1 ou 2: ");
@@ -25,6 +24,9 @@ namespace planta {
         }
         public virtual void Coleta() 
         {
+            Console.Write("Qual o seu nome? ");
+            Dono = Console.ReadLine() ?? "";
+
             Console.Write("Quantos quartos? ");
             NumQuartos = Convert.ToInt32(Console.ReadLine());
 

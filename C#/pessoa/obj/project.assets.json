@@ -8,32 +8,24 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\victor.ezaki\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Victo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\victor.ezaki\\Documents\\jovemProgramador\\C#\\pessoa\\pessoa.csproj",
+      "projectUniqueName": "E:\\Victo\\Documents\\jovemProgramador\\C#\\pessoa\\pessoa.csproj",
       "projectName": "pessoa",
-      "projectPath": "C:\\Users\\victor.ezaki\\Documents\\jovemProgramador\\C#\\pessoa\\pessoa.csproj",
-      "packagesPath": "C:\\Users\\victor.ezaki\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\victor.ezaki\\Documents\\jovemProgramador\\C#\\pessoa\\obj\\",
+      "projectPath": "E:\\Victo\\Documents\\jovemProgramador\\C#\\pessoa\\pessoa.csproj",
+      "packagesPath": "C:\\Users\\Victo\\.nuget\\packages\\",
+      "outputPath": "E:\\Victo\\Documents\\jovemProgramador\\C#\\pessoa\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\victor.ezaki\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Victo\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
