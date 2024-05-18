@@ -2,7 +2,6 @@
 {
     public class Program
     {
-        static List<Pessoa> pessoas = [];
         static void Main()
         {
             int op = 0;
@@ -21,19 +20,19 @@
                 switch (op)
                 {
                     case 1:
-                        CriarPessoa();
+                        PessoaView.CriarPessoa();
                         break;
 
                     case 2:
-                        ListarPessoas();
+                        PessoaView.ListarPessoas();
                         break;
 
                     case 3:
-                        AlterarPessoa();
+                        PessoaView.AlterarPessoa();
                         break;
 
                     case 4:
-                        DeletarPessoa();
+                        PessoaView.DeletarPessoa();
                         break;
 
                     case 5:
@@ -47,76 +46,76 @@
             } while (op != 5);
         }
 
-        static void CriarPessoa()
-        {
-            Pessoa pessoa = new();
+        // static void CriarPessoa()
+        // {
+        //     Pessoa pessoa = new();
 
-            Console.WriteLine("-------- Criando pessoa --------");
-            Console.Write("Digite o nome: ");
-            pessoa.Nome = Console.ReadLine() ?? "";
-            Console.Write("Digite a idade: ");
-            pessoa.Idade = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Digite o CPF: ");
-            pessoa.Cpf = Console.ReadLine() ?? "";
+        //     Console.WriteLine("-------- Criando pessoa --------");
+        //     Console.Write("Digite o nome: ");
+        //     pessoa.Nome = Console.ReadLine() ?? "";
+        //     Console.Write("Digite a idade: ");
+        //     pessoa.Idade = Convert.ToInt32(Console.ReadLine());
+        //     Console.Write("Digite o CPF: ");
+        //     pessoa.Cpf = Console.ReadLine() ?? "";
 
-            pessoas.Add(pessoa);
-        }
-        static void ListarPessoas()
-        {
-            Console.WriteLine("-------- Nomes --------");
-            if (pessoas.Count > 0)
-            {
-                foreach (Pessoa pessoa in pessoas)
-                {
-                    Console.WriteLine((pessoas.IndexOf(pessoa)+1) + $"º {pessoa.Nome} - {pessoa.Idade} - {pessoa.Cpf}");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Lista de pessoas está vazia ainda.");
-            }
-            Console.WriteLine("-----------------------");
-        }
-        static void AlterarPessoa()
-        {
-            ListarPessoas();
-            Console.WriteLine("---- Alterando uma pessoa ----");
-            Console.WriteLine("Informe o indice da peassoa: ");
-            int indice = Convert.ToInt32(Console.ReadLine()) - 1;
+        //     pessoas.Add(pessoa);
+        // }
+        // static void ListarPessoas()
+        // {
+        //     Console.WriteLine("-------- Nomes --------");
+        //     if (pessoas.Count > 0)
+        //     {
+        //         foreach (Pessoa pessoa in pessoas)
+        //         {
+        //             Console.WriteLine((pessoas.IndexOf(pessoa)+1) + $"º {pessoa.Nome} - {pessoa.Idade} - {pessoa.Cpf}");
+        //         }
+        //     }
+        //     else
+        //     {
+        //         Console.WriteLine("Lista de pessoas está vazia ainda.");
+        //     }
+        //     Console.WriteLine("-----------------------");
+        // }
+        // static void AlterarPessoa()
+        // {
+        //     // ListarPessoas();
+        //     Console.WriteLine("---- Alterando uma pessoa ----");
+        //     Console.WriteLine("Informe o indice da peassoa: ");
+        //     int indice = Convert.ToInt32(Console.ReadLine()) - 1;
            
-            if (indice >= 0 && indice < pessoas.Count)
-            {
-                Pessoa pessoa = pessoas[indice];
+            // if (indice >= 0 && indice < pessoas.Count)
+            // {
+            //     Pessoa pessoa = pessoas[indice];
 
-                Console.Write("Digite o nome para alterar: ");
-                pessoa.Nome = Console.ReadLine() ?? "";
-                Console.Write("Digite o idade para alterar: ");
-                pessoa.Idade = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Digite o CPF para alterar: ");
-                pessoa.Cpf = Console.ReadLine() ?? "";
+            //     Console.Write("Digite o nome para alterar: ");
+            //     pessoa.Nome = Console.ReadLine() ?? "";
+            //     Console.Write("Digite o idade para alterar: ");
+            //     pessoa.Idade = Convert.ToInt32(Console.ReadLine());
+            //     Console.Write("Digite o CPF para alterar: ");
+            //     pessoa.Cpf = Console.ReadLine() ?? "";
 
-                pessoas[indice] = pessoa;
-                Console.WriteLine("Nome alterado com sucesso");
-            }
-            else
-            {
-                Console.WriteLine("Indice inváldo!");
-            }
-        }
-        static void DeletarPessoa()
-        {
-            ListarPessoas();
-            Console.WriteLine("---- Deletando uma pessoa ----");
-            Console.WriteLine("Informe o indice da peassoa: ");
-            int indice = Convert.ToInt32(Console.ReadLine()) - 1;
-            if (indice >= 0 && indice < pessoas.Count)
-            {
-                pessoas.RemoveAt(indice);
-            }
-            else
-            {
-                Console.WriteLine("Indice inváldo!");
-            }
-        }
+            //     pessoas[indice] = pessoa;
+            //     Console.WriteLine("Nome alterado com sucesso");
+            // }
+            // else
+            // {
+            //     Console.WriteLine("Indice inváldo!");
+            // }
+        // }
+        // static void DeletarPessoa()
+        // {
+        //     // ListarPessoas();
+        //     Console.WriteLine("---- Deletando uma pessoa ----");
+        //     Console.WriteLine("Informe o indice da peassoa: ");
+        //     int indice = Convert.ToInt32(Console.ReadLine()) - 1;
+        //     if (indice >= 0 && indice < pessoas.Count)
+        //     {
+        //         pessoas.RemoveAt(indice);
+        //     }
+        //     else
+        //     {
+        //         Console.WriteLine("Indice inváldo!");
+        //     }
+        // }
     }
 }
