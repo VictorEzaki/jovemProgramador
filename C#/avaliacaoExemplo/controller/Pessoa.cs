@@ -19,7 +19,7 @@ namespace Programa
             {
                 foreach (Pessoa pessoa in pessoas)
                 {
-                    Console.WriteLine((pessoas.IndexOf(pessoa)+1) + $"º {pessoa.Nome} - {pessoa.Idade} - {pessoa.Cpf}");
+                    Console.WriteLine(pessoas.IndexOf(pessoa)+1 + $"º {pessoa.Nome} - {pessoa.Idade} - {pessoa.Cpf}");
                 }
             }
             else
