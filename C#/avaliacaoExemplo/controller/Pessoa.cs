@@ -1,5 +1,3 @@
-using ListasPessoas;
-
 namespace Programa
 {
     public class PessoaController
@@ -16,6 +14,19 @@ namespace Programa
 
         public static List<Pessoa> ListarPessoa()
         {
+            List<Pessoa> pessoas = Pessoa.ListarPessoa();
+            if (pessoas.Count > 0)
+            {
+                foreach (Pessoa pessoa in pessoas)
+                {
+                    Console.WriteLine(pessoas.IndexOf(pessoa)+1 + $"º {pessoa.Nome} - {pessoa.Idade} - {pessoa.Cpf}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Lista de pessoas está vazia ainda.");
+            }
+            
             return Pessoa.ListarPessoa();
         }
 
