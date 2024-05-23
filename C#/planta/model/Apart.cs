@@ -1,21 +1,34 @@
+using ListaAp;
+
 namespace planta {
     public class Apart : Planta {
         public int Andar {get; set;}
 
-        public override void Construir()
+        public Apart (string dono, int numQuartos, int numSuites, int numBanheiros, int andar)
         {
-            base.Construir();
-            Console.WriteLine($"E a {Construtora}, estará responsável pela construção de seu apartamento, \nCom {NumQuartos} quartos, {NumSuites} suítes e {NumBanheiros} banheiros.");
+            Dono = dono;
+            NumQuartos = numQuartos;
+            NumSuites = numSuites;
+            NumBanheiros = numBanheiros;
+            Andar = andar;
+
+            ApartList.aparts.Add(this);
         }
-        public override void Coleta()
+        public static List<Apart> ListarAparts()
         {
-            base.Coleta();
-            Console.Write("Em que andar Gostaria de morar? ");
-            Andar = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("------------------------------------------------------------------------------");
-            
-            Construir();
-            Console.WriteLine("------------------------------------------------------------------------------");
+            return ApartList.aparts;
+        }
+        public static void AlterarApart(int indice, string dono, int numQuartos, int numSuites, int numBanheiros, int andar)
+        {
+            Apart apart = ApartList.aparts[indice];
+
+            apart.Dono = dono;
+            apart.NumQuartos = numQuartos;
+            apart.NumSuites = numSuites;
+            apart.NumBanheiros = numBanheiros;
+            apart.Andar = andar;
+
+            ApartList.aparts[indice] = apart;
         }
     }
 }
