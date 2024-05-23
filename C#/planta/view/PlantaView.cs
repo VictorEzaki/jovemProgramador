@@ -92,7 +92,7 @@ namespace planta
                         Console.WriteLine("Voltando ao menu principal...");
                         break;
                     default:
-                        Console.WriteLine("Opção inválida");
+                        Console.WriteLine("Opção inválida!");
                         break;
                 }
 
