@@ -7,34 +7,19 @@ namespace planta {
         public int CasaOuAp {get; set;}
         public string Construtora {get; set;} = "JlleConstruções";
         
-        public virtual void Construir()
-        {
-            Console.Write("Sua planta ja está sendo feita.\n");
-        }
+        // public virtual void Coleta() 
+        // {
+        //     Console.Write("Qual o seu nome? ");
+        //     Dono = Console.ReadLine() ?? "";
 
-        public void InfoBasica()
-        {
-            do
-            {
-                Console.WriteLine($"{Dono}, você deseja construir uma [1]casa ou [2]apartamento? obs.: Digite 1 ou 2: ");
-                CasaOuAp = Convert.ToInt32(Console.ReadLine()); 
-                Console.Write(CasaOuAp != 1 && CasaOuAp != 2 ? "Opção inválida": null);            
-            } while(CasaOuAp != 1 && CasaOuAp != 2);
-            Console.WriteLine("------------------------------------------------------------------------------");
-        }
-        public virtual void Coleta() 
-        {
-            Console.Write("Qual o seu nome? ");
-            Dono = Console.ReadLine() ?? "";
+        //     Console.Write("Quantos quartos? ");
+        //     NumQuartos = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Quantos quartos? ");
-            NumQuartos = Convert.ToInt32(Console.ReadLine());
+        //     Console.Write("Quantas suítes? ");
+        //     NumSuites = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Quantas suítes? ");
-            NumSuites = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Quantos banheiros? ");
-            NumBanheiros = Convert.ToInt32(Console.ReadLine());
-        }
+        //     Console.Write("Quantos banheiros? ");
+        //     NumBanheiros = Convert.ToInt32(Console.ReadLine());
+        // }
     }
 }

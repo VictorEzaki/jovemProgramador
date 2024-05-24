@@ -1,20 +1,38 @@
+using CasasList;
+
 namespace planta {
     public class Casa : Planta {
         public int VagasGaragem {get; set;}
 
-        public override void Construir()
+        public Casa(string dono, int numQuartos, int numSuites, int numBanheiros, int vagasGaragem)
         {
-            base.Construir();
-            Console.WriteLine($"E a {Construtora}, estará responsável pela construção de sua casa, \nCom {NumQuartos} quartos, {NumSuites} suítes, {NumBanheiros} banheiros e uma garagem com {VagasGaragem} vagas.");
+            Dono = dono;
+            NumQuartos = numQuartos;
+            NumSuites = numSuites;
+            NumBanheiros = numBanheiros;
+            VagasGaragem = vagasGaragem;
+
+            CasasLista.casas.Add(this);
         }
-        public override void Coleta()
+        public static List<Casa> ListarCasas()
         {
-            base.Coleta();
-            Console.Write("Será necessária quantas vagas na garagem? ");
-            VagasGaragem = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("------------------------------------------------------------------------------");
-            Construir();
-            Console.WriteLine("------------------------------------------------------------------------------");
+            return CasasLista.casas;
+        }
+        public static void AlterarCasa(int indice, string dono, int numQuartos, int numSuites, int numBanheiros, int vagasGaragem)
+        {
+            Casa casa = CasasLista.casas[indice];
+            
+            casa.Dono = dono;
+            casa.NumQuartos = numQuartos;
+            casa.NumSuites = numSuites;
+            casa.NumBanheiros = numBanheiros;
+            casa.VagasGaragem = vagasGaragem;
+
+            CasasLista.casas[indice] = casa;
+        }
+        public static void DeletarCasa(int indice)
+        {
+            CasasLista.casas.RemoveAt(indice);
         }
     }
 }

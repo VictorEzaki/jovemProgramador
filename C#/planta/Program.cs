@@ -22,19 +22,19 @@
                 switch (op)
                 {
                     case 1:
-                        Cadastro();
+                        PlantaView.Cadastro();
                         break;
 
                     case 2:
-                        VerImovel();
+                        PlantaView.VerImovel();
                         break;
 
                     case 3:
-                        AlterarImovel();
+                        PlantaView.AlterarImovel();
                         break;
 
                     case 4:
-                        VerImovel();
+                        PlantaView.DeletarImovel();
                         break;
 
                     case 5:
@@ -48,110 +48,110 @@
             } while (op != 5);
         }
 
-        static void MenuCsAp()
-        {
-            Console.WriteLine("[1] Casas");
-            Console.WriteLine("[2] Apartamentos");
-            Console.WriteLine("[3] Voltar");
-        }
-        static void Cadastro()
-        {
-            int op = 0;
+        // static void MenuCsAp()
+        // {
+        //     Console.WriteLine("[1] Casas");
+        //     Console.WriteLine("[2] Apartamentos");
+        //     Console.WriteLine("[3] Voltar");
+        // }
+        // static void Cadastro()
+        // {
+        //     int op = 0;
 
-            do
-            {
-                Console.WriteLine("------ Cadastrar ------");
-                MenuCsAp();
-                Console.WriteLine("-----------------------");
-                op = Convert.ToInt32(Console.ReadLine());
+        //     do
+        //     {
+        //         Console.WriteLine("------ Cadastrar ------");
+        //         MenuCsAp();
+        //         Console.WriteLine("-----------------------");
+        //         op = Convert.ToInt32(Console.ReadLine());
 
-                switch (op)
-                {
-                    case 1:
-                        Casa casa = new Casa();
-                        casa.Coleta();
-                        casas.Add(casa);
-                        break;
+        //         switch (op)
+        //         {
+        //             case 1:
+        //                 Casa casa = new Casa();
+        //                 casa.Coleta();
+        //                 casas.Add(casa);
+        //                 break;
 
-                    case 2:
-                        Apart apart = new Apart();
-                        apart.Coleta();
-                        aparts.Add(apart);
-                        break;
-                    case 3:
-                        Console.WriteLine("Voltando ao menu principal...");
-                        break;
-                    default:
-                        Console.WriteLine("Opção inválida");
-                        break;
-                }
+        //             case 2:
+        //                 Apart apart = new Apart();
+        //                 apart.Coleta();
+        //                 aparts.Add(apart);
+        //                 break;
+        //             case 3:
+        //                 Console.WriteLine("Voltando ao menu principal...");
+        //                 break;
+        //             default:
+        //                 Console.WriteLine("Opção inválida");
+        //                 break;
+        //         }
 
-            } while (op != 3);
-        }
-        static void VerImovel()
-        {
-            int op = 0;
-            int aux;
+        //     } while (op != 3);
+        // }
+        // static void VerImovel()
+        // {
+        //     int op = 0;
+        //     int aux;
 
-            do
-            {
-                Console.WriteLine("-------- Listar --------");
-                MenuCsAp();
-                Console.WriteLine("------------------------");
-                op = Convert.ToInt32(Console.ReadLine());
+        //     do
+        //     {
+        //         Console.WriteLine("-------- Listar --------");
+        //         MenuCsAp();
+        //         Console.WriteLine("------------------------");
+        //         op = Convert.ToInt32(Console.ReadLine());
 
-                switch (op)
-                {
-                    case 1:
-                        aux = 1;
-                        foreach (var casa in casas)
-                        {
-                            Console.WriteLine($"------- {aux}º Casa -------");
-                            Console.WriteLine(
-                                "Dono: " + casa.Dono +
-                                "\nNúmero de quartos: " + casa.NumQuartos +
-                                "\nNúmero de banheiros: " + casa.NumBanheiros +
-                                "\nNúmero de suítes: " + casa.NumSuites +
-                                "\nVagas na garagem: " + casa.VagasGaragem
-                                );
-                            Console.WriteLine("-----------------------");
+        //         switch (op)
+        //         {
+        //             case 1:
+        //                 aux = 1;
+        //                 foreach (var casa in casas)
+        //                 {
+        //                     Console.WriteLine($"------- {aux}º Casa -------");
+        //                     Console.WriteLine(
+        //                         "Dono: " + casa.Dono +
+        //                         "\nNúmero de quartos: " + casa.NumQuartos +
+        //                         "\nNúmero de banheiros: " + casa.NumBanheiros +
+        //                         "\nNúmero de suítes: " + casa.NumSuites +
+        //                         "\nVagas na garagem: " + casa.VagasGaragem
+        //                         );
+        //                     Console.WriteLine("-----------------------");
 
-                            aux++;
-                        }
-                        break;
+        //                     aux++;
+        //                 }
+        //                 break;
 
-                    case 2:
-                        aux = 1;
-                        foreach (var apart in aparts)
-                        {
-                            Console.WriteLine($"------- {aux}º Casa -------");
-                            Console.WriteLine(
-                                "Dono: " + apart.Dono +
-                                "\nAndar: " + apart.Andar +
-                                "\nNúmero de quartos: " + apart.NumQuartos +
-                                "\nNúmero de banheiros: " + apart.NumBanheiros +
-                                "\nNúmero de suítes: " + apart.NumSuites
-                                );
-                            Console.WriteLine("-----------------------");
+        //             case 2:
+        //                 aux = 1;
+        //                 foreach (var apart in aparts)
+        //                 {
+        //                     Console.WriteLine($"------- {aux}º Casa -------");
+        //                     Console.WriteLine(
+        //                         "Dono: " + apart.Dono +
+        //                         "\nAndar: " + apart.Andar +
+        //                         "\nNúmero de quartos: " + apart.NumQuartos +
+        //                         "\nNúmero de banheiros: " + apart.NumBanheiros +
+        //                         "\nNúmero de suítes: " + apart.NumSuites
+        //                         );
+        //                     Console.WriteLine("-----------------------");
 
-                            aux++;
-                        }
-                        break;
-                    case 3:
-                        Console.WriteLine("Voltando ao menu principal...");
-                        break;
-                    default:
-                        Console.WriteLine("Opção inválida");
-                        break;
-                }
+        //                     aux++;
+        //                 }
+        //                 break;
+        //             case 3:
+        //                 Console.WriteLine("Voltando ao menu principal...");
+        //                 break;
+        //             default:
+        //                 Console.WriteLine("Opção inválida");
+        //                 break;
+        //         }
 
-            } while (op != 3);
-        }
-        static void AlterarImovel()
-        {
-            Console.WriteLine("------- Alterar -------");
-            MenuCsAp();
-            Console.WriteLine("-----------------------");
-        }
+        //     } while (op != 3);
+        // }
+        // static void AlterarImovel()
+        // {
+        //     Console.WriteLine("------- Alterar -------");
+        //     MenuCsAp();
+        //     Console.WriteLine("-----------------------");
+        // }
     }
 }
