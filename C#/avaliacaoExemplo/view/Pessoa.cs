@@ -16,20 +16,8 @@ namespace Programa
         }
         public static void ListarPessoas()
         {
-            List<Pessoa> pessoas = PessoaController.ListarPessoa();
-
             Console.WriteLine("-------- Nomes --------");
-            if (pessoas.Count > 0)
-            {
-                foreach (Pessoa pessoa in pessoas)
-                {
-                    Console.WriteLine((pessoas.IndexOf(pessoa)+1) + $"º {pessoa.Nome} - {pessoa.Idade} - {pessoa.Cpf}");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Lista de pessoas está vazia ainda.");
-            }
+            List<Pessoa> pessoas = PessoaController.ListarPessoa();
             Console.WriteLine("-----------------------");
         }
 
