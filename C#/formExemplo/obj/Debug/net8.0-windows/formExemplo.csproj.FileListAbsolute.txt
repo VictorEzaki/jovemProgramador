@@ -1,0 +1,15 @@
+C:\Users\victor.ezaki\documents\jovemProgramador\C#\formExemplo\bin\Debug\net8.0-windows\formExemplo.exe
+C:\Users\victor.ezaki\documents\jovemProgramador\C#\formExemplo\bin\Debug\net8.0-windows\formExemplo.deps.json
+C:\Users\victor.ezaki\documents\jovemProgramador\C#\formExemplo\bin\Debug\net8.0-windows\formExemplo.runtimeconfig.json
+C:\Users\victor.ezaki\documents\jovemProgramador\C#\formExemplo\bin\Debug\net8.0-windows\formExemplo.dll
+C:\Users\victor.ezaki\documents\jovemProgramador\C#\formExemplo\bin\Debug\net8.0-windows\formExemplo.pdb
+C:\Users\victor.ezaki\documents\jovemProgramador\C#\formExemplo\obj\Debug\net8.0-windows\formExemplo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\victor.ezaki\documents\jovemProgramador\C#\formExemplo\obj\Debug\net8.0-windows\formExemplo.AssemblyInfoInputs.cache
+C:\Users\victor.ezaki\documents\jovemProgramador\C#\formExemplo\obj\Debug\net8.0-windows\formExemplo.AssemblyInfo.cs
+C:\Users\victor.ezaki\documents\jovemProgramador\C#\formExemplo\obj\Debug\net8.0-windows\formExemplo.csproj.CoreCompileInputs.cache
+C:\Users\victor.ezaki\documents\jovemProgramador\C#\formExemplo\obj\Debug\net8.0-windows\formExemplo.sourcelink.json
+C:\Users\victor.ezaki\documents\jovemProgramador\C#\formExemplo\obj\Debug\net8.0-windows\formExemplo.dll
+C:\Users\victor.ezaki\documents\jovemProgramador\C#\formExemplo\obj\Debug\net8.0-windows\refint\formExemplo.dll
+C:\Users\victor.ezaki\documents\jovemProgramador\C#\formExemplo\obj\Debug\net8.0-windows\formExemplo.pdb
+C:\Users\victor.ezaki\documents\jovemProgramador\C#\formExemplo\obj\Debug\net8.0-windows\formExemplo.genruntimeconfig.cache
+C:\Users\victor.ezaki\documents\jovemProgramador\C#\formExemplo\obj\Debug\net8.0-windows\ref\formExemplo.dll
