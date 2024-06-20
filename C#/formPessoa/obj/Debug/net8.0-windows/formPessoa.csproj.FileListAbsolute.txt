@@ -1,0 +1,15 @@
+E:\Victo\Documents\jovemProgramador\C#\formPessoa\bin\Debug\net8.0-windows\formPessoa.exe
+E:\Victo\Documents\jovemProgramador\C#\formPessoa\bin\Debug\net8.0-windows\formPessoa.deps.json
+E:\Victo\Documents\jovemProgramador\C#\formPessoa\bin\Debug\net8.0-windows\formPessoa.runtimeconfig.json
+E:\Victo\Documents\jovemProgramador\C#\formPessoa\bin\Debug\net8.0-windows\formPessoa.dll
+E:\Victo\Documents\jovemProgramador\C#\formPessoa\bin\Debug\net8.0-windows\formPessoa.pdb
+E:\Victo\Documents\jovemProgramador\C#\formPessoa\obj\Debug\net8.0-windows\formPessoa.GeneratedMSBuildEditorConfig.editorconfig
+E:\Victo\Documents\jovemProgramador\C#\formPessoa\obj\Debug\net8.0-windows\formPessoa.AssemblyInfoInputs.cache
+E:\Victo\Documents\jovemProgramador\C#\formPessoa\obj\Debug\net8.0-windows\formPessoa.AssemblyInfo.cs
+E:\Victo\Documents\jovemProgramador\C#\formPessoa\obj\Debug\net8.0-windows\formPessoa.csproj.CoreCompileInputs.cache
+E:\Victo\Documents\jovemProgramador\C#\formPessoa\obj\Debug\net8.0-windows\formPessoa.sourcelink.json
+E:\Victo\Documents\jovemProgramador\C#\formPessoa\obj\Debug\net8.0-windows\formPessoa.dll
+E:\Victo\Documents\jovemProgramador\C#\formPessoa\obj\Debug\net8.0-windows\refint\formPessoa.dll
+E:\Victo\Documents\jovemProgramador\C#\formPessoa\obj\Debug\net8.0-windows\formPessoa.pdb
+E:\Victo\Documents\jovemProgramador\C#\formPessoa\obj\Debug\net8.0-windows\formPessoa.genruntimeconfig.cache
+E:\Victo\Documents\jovemProgramador\C#\formPessoa\obj\Debug\net8.0-windows\ref\formPessoa.dll
