@@ -111,7 +111,6 @@ public class PessoaView : Form
         DGVList.Columns.Clear();
         DGVList.AutoGenerateColumns = false;
         DGVList.DataSource = pessoas;
-        DGVList.RowHeadersWidth = 200;
         
         DGVList.Columns.Add(new DataGridViewTextBoxColumn
         {

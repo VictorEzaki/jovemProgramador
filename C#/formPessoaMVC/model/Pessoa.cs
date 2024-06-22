@@ -19,13 +19,13 @@ namespace Model
             PessoaList.Sincronizar();
         }
 
-        public Pessoa(string nome, string cpf, int anos)
+        public Pessoa(string nome, string cpf, int idade)
         {
-            this.Nome = nome;
+            Nome = nome;
             Cpf = cpf;
-            Idade = anos;
+            Idade = idade;
 
-            PessoaList.pessoas.Add(this);
+            PessoaList.Cadastrar(this);
         }
 
         public static List<Pessoa> ListarPessoa()
@@ -35,12 +35,7 @@ namespace Model
 
         public static void AlterarPessoa(string nome, int anos, string cpf, int indice)
         {
-            Pessoa pessoa = PessoaList.pessoas[indice];
-            pessoa.Nome = nome;
-            pessoa.Idade = anos;
-            pessoa.Cpf = cpf;
-
-            PessoaList.pessoas[indice] = pessoa;
+            PessoaList.Alterar(nome, cpf, anos, indice);
         }
 
         public static void DeletarPessoa(int indice)

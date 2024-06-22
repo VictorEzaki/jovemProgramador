@@ -10,7 +10,7 @@ namespace Repository
 
         public static void InitConexao()
         {
-            string info = "server=localhost;database=projetointegradoexemp; user id=root;password=''";
+            string info = "server=localhost;database=teste; user id=root;password=''";
             conexao = new MySqlConnection(info);
 
             try
@@ -31,7 +31,7 @@ namespace Repository
         public static void Sincronizar()
         {
             InitConexao();
-            
+
             string query = "SELECT * FROM pessoas";
             MySqlCommand command = new MySqlCommand(query, conexao);
             MySqlDataReader reader = command.ExecuteReader();
@@ -45,13 +45,87 @@ namespace Repository
                 pessoa.Idade = Convert.ToInt32(reader["Idade"].ToString());
                 pessoas.Add(pessoa);
             }
-            
+
             CloseConexao();
         }
 
-        public static void Cadastrar()
+        public static void Cadastrar(Pessoa pessoa)
         {
+            InitConexao();
+            string insert = "INSERT INTO pessoas (nome, idade, cpf) VALUES (@Nome, @Idade, @Cpf)";
+            MySqlCommand command = new MySqlCommand(insert, conexao);
+            try
+            {
+                if (pessoa.Nome == null || pessoa.Idade < 0 || pessoa.Cpf == null)
+                {
+                    MessageBox.Show("Deu ruim, favor preencher a pessoa");
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@Nome", pessoa.Nome);
+                    command.Parameters.AddWithValue("@Idade", pessoa.Idade);
+                    command.Parameters.AddWithValue("@Cpf", pessoa.Cpf);
 
+                    int rowsAffected = command.ExecuteNonQuery();
+                    pessoa.Id = Convert.ToInt32(command.LastInsertedId);
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Pessoa cadastrada com sucesso");
+                        pessoas.Add(pessoa);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Deu ruim, não deu pra adicionar");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Deu ruim: " + e.Message);
+            }
+
+            CloseConexao();
+        }
+
+        public static void Alterar(string nome, string cpf, int idade, int indice)
+        {
+            InitConexao();
+            MessageBox.Show("iniciando");
+            string query = "UPDATE pessoas SET nome = @Nome, idade = @Idade, cpf = @Cpf WHERE id = @Id";
+            MySqlCommand command = new MySqlCommand(query, conexao);
+            Pessoa pessoa = pessoas[indice];
+            try
+            {
+                if (nome != null || idade > 0 || cpf != null)
+                {
+                    command.Parameters.AddWithValue("@Id", pessoa.Id);
+                    command.Parameters.AddWithValue("@Nome", nome);
+                    command.Parameters.AddWithValue("@Cpf", cpf);
+                    command.Parameters.AddWithValue("@Idade", idade);
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        pessoa.Nome = nome;
+                        pessoa.Idade = idade;
+                        pessoa.Cpf = cpf;
+                    }
+                    else
+                    {
+                        MessageBox.Show(rowsAffected.ToString());
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Usuário não encontrado");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro durante a execução do comando: " + ex.Message);
+            }
+            CloseConexao();
         }
 
         public static void Delete(int indice)
@@ -66,12 +140,13 @@ namespace Repository
             if (rowsAffected > 0)
             {
                 pessoas.RemoveAt(indice);
-                MessageBox.Show("Deletado pessoa com sucesso");
+                MessageBox.Show("Pessoa deletada com sucesso");
             }
             else
             {
                 MessageBox.Show("Pessoa não encontrada");
             }
+
             CloseConexao();
         }
     }
