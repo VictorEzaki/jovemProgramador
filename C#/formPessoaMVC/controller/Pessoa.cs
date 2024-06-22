@@ -15,6 +15,10 @@ namespace Controller
                 anos 
             );
         }
+        public static void Sincronizar()
+        {
+            Pessoa.Sincronizar();
+        }
 
         public static List<Pessoa> ListarPessoa()
         {
@@ -27,6 +31,8 @@ namespace Controller
         {
             List<Pessoa> pessoas = ListarPessoa();
             int anos = Convert.ToInt32(idade);
+
+            Pessoa.AlterarPessoa(nome, anos, cpf, indice);
         }
 
         public static void DeletarPessoa(int indice)

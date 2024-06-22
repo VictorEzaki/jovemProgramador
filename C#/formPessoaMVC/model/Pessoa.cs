@@ -4,9 +4,20 @@ namespace Model
 {
     public class Pessoa
     {
+        public int Id {get; set;}
         public string Nome {get; set;}
         public string Cpf {get; set;}
         public int Idade {get; set;}
+
+        public Pessoa()
+        {
+
+        }
+        
+        public static void Sincronizar()
+        {
+            PessoaList.Sincronizar();
+        }
 
         public Pessoa(string nome, string cpf, int anos)
         {
@@ -22,11 +33,11 @@ namespace Model
             return PessoaList.pessoas;
         }
 
-        public static void AlterarPessoa(string nome, int idade, string cpf, int indice)
+        public static void AlterarPessoa(string nome, int anos, string cpf, int indice)
         {
             Pessoa pessoa = PessoaList.pessoas[indice];
             pessoa.Nome = nome;
-            pessoa.Idade = idade;
+            pessoa.Idade = anos;
             pessoa.Cpf = cpf;
 
             PessoaList.pessoas[indice] = pessoa;
@@ -34,7 +45,7 @@ namespace Model
 
         public static void DeletarPessoa(int indice)
         {
-            PessoaList.pessoas.RemoveAt(indice);
+            PessoaList.Delete(indice);
         }
 
         public void Apresentar()

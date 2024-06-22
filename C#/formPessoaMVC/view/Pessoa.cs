@@ -18,6 +18,7 @@ public class PessoaView : Form
     private readonly DataGridView DGVList;
     public PessoaView()
     {
+        PessoaController.Sincronizar();
         Size = new Size(800, 600);
         StartPosition = FormStartPosition.CenterScreen;
 
@@ -100,6 +101,7 @@ public class PessoaView : Form
         Controls.Add(BtnAlterar);
         Controls.Add(BtnDeletar);
         Controls.Add(DGVList);
+        Listar();
     }
 
     private void Listar()
@@ -109,7 +111,14 @@ public class PessoaView : Form
         DGVList.Columns.Clear();
         DGVList.AutoGenerateColumns = false;
         DGVList.DataSource = pessoas;
-
+        DGVList.RowHeadersWidth = 200;
+        
+        DGVList.Columns.Add(new DataGridViewTextBoxColumn
+        {
+            HeaderText = "Id",
+            DataPropertyName = "Id"
+        });
+        
         DGVList.Columns.Add(new DataGridViewTextBoxColumn
         {
             HeaderText = "Nome",
@@ -151,6 +160,11 @@ public class PessoaView : Form
         int indice = DGVList.SelectedRows[0].Index;
 
         PessoaController.AlterarPessoa(InpNome.Text, InpCpf.Text, InpIdade.Text, indice);
+        InpNome.Text = "";
+        InpCpf.Text = ""; 
+        InpIdade.Text = "";
+
+        Listar();
     }
 
     private void ClickDeletar(object? sender, EventArgs e)
