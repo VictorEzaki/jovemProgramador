@@ -111,30 +111,48 @@ public class PessoaView : Form
         DGVList.Columns.Clear();
         DGVList.AutoGenerateColumns = false;
         DGVList.DataSource = pessoas;
-        
+
+
+
         DGVList.Columns.Add(new DataGridViewTextBoxColumn
         {
             HeaderText = "Id",
             DataPropertyName = "Id"
         });
-        
+
         DGVList.Columns.Add(new DataGridViewTextBoxColumn
         {
             HeaderText = "Nome",
             DataPropertyName = "Nome"
         });
-        
+
         DGVList.Columns.Add(new DataGridViewTextBoxColumn
         {
             HeaderText = "Cpf",
             DataPropertyName = "Cpf"
         });
-        
+
         DGVList.Columns.Add(new DataGridViewTextBoxColumn
         {
             HeaderText = "Idade",
             DataPropertyName = "Idade"
         });
+
+        foreach (DataGridViewColumn column in DGVList.Columns)
+        {
+            if (column.DataPropertyName == "Id")
+                column.Width = 200;
+            column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            if (column.DataPropertyName == "Nome")
+                column.Width = 200;
+            column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            if (column.DataPropertyName == "Cpf")
+                column.Width = 200;
+            column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            if (column.DataPropertyName == "Idade")
+                column.Width = 200;
+            column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
     }
 
     private void ClickCadastrar(object? sender, EventArgs e)
@@ -160,7 +178,7 @@ public class PessoaView : Form
 
         PessoaController.AlterarPessoa(InpNome.Text, InpCpf.Text, InpIdade.Text, indice);
         InpNome.Text = "";
-        InpCpf.Text = ""; 
+        InpCpf.Text = "";
         InpIdade.Text = "";
 
         Listar();

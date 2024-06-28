@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xGkxWUl+exqRgVhVlcaTIW56iOHTOVJeiDuZ1g5bwoaFA409OXsULzA7khq5JsUcl0ovNeg3H5HTbmiPApq7kg==",
+  "dgSpecHash": "q8XbLgdZ4pPLp8Jhf/HdsgOLYANbpO7XmoJeXqFko/gCztDQ80eFStMpftgyS2xMVzmMUFr7SJ0Ua7/2S/1fiQ==",
   "success": true,
-  "projectFilePath": "E:\\Victo\\Documents\\jovemProgramador\\C#\\formPessoaMVC\\formPessoaMVC.csproj",
+  "projectFilePath": "C:\\Users\\victor.ezaki\\Documents\\jovemProgramador\\C#\\formPessoaMVC\\formPessoaMVC.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Victo\\.nuget\\packages\\mysqlconnector\\2.2.5\\mysqlconnector.2.2.5.nupkg.sha512"
+    "C:\\Users\\victor.ezaki\\.nuget\\packages\\mysqlconnector\\2.2.5\\mysqlconnector.2.2.5.nupkg.sha512"
   ],
   "logs": []
 }

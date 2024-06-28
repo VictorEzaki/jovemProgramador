@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("formPessoaMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa7e848a9c3ffcf8c163bdfae9ab91d070ac1a13")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+094b928160a788c5d46060f73834af38b703dd99")]
 [assembly: System.Reflection.AssemblyProductAttribute("formPessoaMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("formPessoaMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
