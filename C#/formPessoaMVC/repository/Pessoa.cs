@@ -10,7 +10,7 @@ namespace Repository
 
         public static void InitConexao()
         {
-            string info = "server=localhost;database=teste; user id=root;password=''";
+            string info = "server=localhost;database=projetointegradoexemp; user id=root;password=''";
             conexao = new MySqlConnection(info);
 
             try
@@ -58,7 +58,7 @@ namespace Repository
             {
                 if (pessoa.Nome == null || pessoa.Idade < 0 || pessoa.Cpf == null)
                 {
-                    MessageBox.Show("Deu ruim, favor preencher a pessoa");
+                    MessageBox.Show("Preencha todos os campos");
                 }
                 else
                 {
@@ -67,16 +67,16 @@ namespace Repository
                     command.Parameters.AddWithValue("@Cpf", pessoa.Cpf);
 
                     int rowsAffected = command.ExecuteNonQuery();
-                    pessoa.Id = Convert.ToInt32(command.LastInsertedId);
 
                     if (rowsAffected > 0)
                     {
+                        pessoa.Id = Convert.ToInt32(command.LastInsertedId);
                         MessageBox.Show("Pessoa cadastrada com sucesso");
                         pessoas.Add(pessoa);
                     }
                     else
                     {
-                        MessageBox.Show("Deu ruim, não deu pra adicionar");
+                        MessageBox.Show("Não foi possível cadastrar");
                     }
                 }
             }
@@ -92,8 +92,8 @@ namespace Repository
         {
             InitConexao();
             MessageBox.Show("iniciando");
-            string query = "UPDATE pessoas SET nome = @Nome, idade = @Idade, cpf = @Cpf WHERE id = @Id";
-            MySqlCommand command = new MySqlCommand(query, conexao);
+            string alterar = "UPDATE pessoas SET nome = @Nome, idade = @Idade, cpf = @Cpf WHERE id = @Id";
+            MySqlCommand command = new MySqlCommand(alterar, conexao);
             Pessoa pessoa = pessoas[indice];
             try
             {
