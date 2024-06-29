@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "2ddGKGLKCQWF0mE/htOEm57TpWA41gDQa3MeaWhtU04MluZjAZSywYamebgfjOjGsYMawQfx5ekDIV9Pr1e+iA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\victor.ezaki\\Documents\\jovemProgramador\\C#\\provaWinForms\\provaWinForms.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\victor.ezaki\\.nuget\\packages\\mysqlconnector\\2.2.5\\mysqlconnector.2.2.5.nupkg.sha512"
+  ],
+  "logs": []
+}
