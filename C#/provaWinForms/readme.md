@@ -1,0 +1,7 @@
+CREATE TABLE `tarefas`(
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `tarefa` VARCHAR(255) NOT NULL,
+    `data` VARCHAR(10) NOT NULL,
+    `hora` TIME NOT NULL,
+    `situacao` VARCHAR(13) NOT NULL
+);

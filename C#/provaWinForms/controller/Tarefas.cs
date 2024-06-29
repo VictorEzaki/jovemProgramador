@@ -3,10 +3,10 @@ namespace Controller
 {
     public class ControllerTarefas
     {
-        public static void Cadastrar(string nome, string data, string hora, bool situacao)
+        public static void Cadastrar(string tarefa, string data, string hora, bool situacao)
         {
-            new Tarefas (
-                nome,
+            new Tarefas(
+                tarefa,
                 data,
                 hora,
                 situacao
@@ -23,9 +23,9 @@ namespace Controller
             return Tarefas.ListarTarefas();
         }
 
-        public static void AlterarTarefa(string nome, string data, string hora, int indice)
+        public static void AlterarTarefa(string tarefa, string data, string hora, int indice)
         {
-            Tarefas.AlterarTarefa(nome, data, hora, indice);
+            Tarefas.AlterarTarefa(tarefa, data, hora, indice);
         }
 
         public static void DeletarTarefa(int indice)
@@ -33,19 +33,9 @@ namespace Controller
             Tarefas.DeletarTarefa(indice);
         }
 
-        public static void AlterarStatus(int indice, int status)
+        public static void AlterarStatus(int indice)
         {
-            List<Tarefas> tarefas = ListarTarefas();
-            bool situacao;
-
-            if(indice >= 0 && indice < tarefas.Count){
-                situacao = status == 1 ? true : false; 
-                
-                Tarefas.AlterarStatus(indice, situacao);
-                Console.WriteLine("Status alterado com sucesso!");
-            } else {
-                Console.WriteLine("Indice inválido");
-            }
+            Tarefas.AlterarStatus(indice);
         }
     }
 }

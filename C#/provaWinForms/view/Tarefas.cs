@@ -3,69 +3,70 @@ using Model;
 
 namespace Views;
 
-public class TarefasView : Form
+public class ViewTarefas : Form
 {
-    private readonly Label LblNome;
+    private readonly Label LblTarefa;
     private readonly Label LblData;
     private readonly Label LblHora;
-    private readonly TextBox InpNome;
+    private readonly TextBox InpTarefa;
     private readonly TextBox InpData;
     private readonly TextBox InpHora;
     private readonly Button BtnCadastrar;
     private readonly Button BtnAlterar;
     private readonly Button BtnDeletar;
+    private readonly Button BtnStatus;
     private readonly DataGridView DGVTarefas;
 
-    public TarefasView()
+    public ViewTarefas()
     {
         ControllerTarefas.Sincronizar();
         Size = new Size(800, 600);
         StartPosition = FormStartPosition.CenterScreen;
 
-        LblNome = new Label
+        LblTarefa = new Label
         {
-            Text = "Nome: ",
+            Text = "Tarefa: ",
             Size = new Size(50, 20),
-            Location = new Point((this.ClientSize.Width / 2) - 100, 50)
+            Location = new Point((this.ClientSize.Width / 2) - 75, 50)
         };
 
         LblData = new Label
         {
-            Text = "Data: ",
-            Size = new Size(50, 20),
-            Location = new Point((this.ClientSize.Width / 2) - 100, 100)
+            Text = "Data: (yyyy-mm-dd)",
+            Size = new Size(150, 20),
+            Location = new Point((this.ClientSize.Width / 2) - 75, 100)
         };
 
         LblHora = new Label
         {
-            Text = "Hora: ",
-            Size = new Size(50, 20),
-            Location = new Point((this.ClientSize.Width / 2) - 100, 150)
+            Text = "Hora: (hh:mm)",
+            Size = new Size(100, 20),
+            Location = new Point((this.ClientSize.Width / 2) - 75, 150)
         };
 
-        InpNome = new TextBox
+        InpTarefa = new TextBox
         {
             Size = new Size(150, 20),
-            Location = new Point((this.ClientSize.Width / 2) - 50, 50)
+            Location = new Point((this.ClientSize.Width / 2) - 75, 70)
         };
 
         InpData = new TextBox
         {
             Size = new Size(150, 20),
-            Location = new Point((this.ClientSize.Width / 2) - 50, 100)
+            Location = new Point((this.ClientSize.Width / 2) - 75, 120)
         };
 
         InpHora = new TextBox
         {
             Size = new Size(150, 20),
-            Location = new Point((this.ClientSize.Width / 2) - 50, 150)
+            Location = new Point((this.ClientSize.Width / 2) - 75, 170)
         };
 
         BtnCadastrar = new Button
         {
             Text = "Cadastrar",
             Size = new Size(80, 20),
-            Location = new Point((this.ClientSize.Width / 2) - 150, 200)
+            Location = new Point((this.ClientSize.Width / 2) + 50, 200)
         };
         BtnCadastrar.Click += ClickCadastrar;
 
@@ -81,9 +82,17 @@ public class TarefasView : Form
         {
             Text = "Deletar",
             Size = new Size(80, 20),
-            Location = new Point((this.ClientSize.Width / 2) + 50, 200)
+            Location = new Point((this.ClientSize.Width / 2) - 150, 200)
         };
         BtnDeletar.Click += ClickDeletar;
+
+        BtnStatus = new Button
+        {
+            Text = "Alterar Status",
+            Size = new Size(100, 20),
+            Location = new Point(this.ClientSize.Width - 105, 225)
+        };
+        BtnStatus.Click += ClickStatus;
 
         DGVTarefas = new DataGridView
         {
@@ -91,21 +100,23 @@ public class TarefasView : Form
             Location = new Point(0, 250),
         };
 
-        Controls.Add(LblNome);
+        Controls.Add(LblTarefa);
         Controls.Add(LblData);
         Controls.Add(LblHora);
-        Controls.Add(InpNome);
+        Controls.Add(InpTarefa);
         Controls.Add(InpData);
         Controls.Add(InpHora);
         Controls.Add(BtnCadastrar);
         Controls.Add(BtnAlterar);
         Controls.Add(BtnDeletar);
+        Controls.Add(BtnStatus);
         Controls.Add(DGVTarefas);
         Listar();
     }
 
     private void Listar()
     {
+
         List<Tarefas> Tarefas = ControllerTarefas.ListarTarefas();
 
         DGVTarefas.Columns.Clear();
@@ -116,14 +127,14 @@ public class TarefasView : Form
 
         DGVTarefas.Columns.Add(new DataGridViewTextBoxColumn
         {
-            HeaderText = "IdTarefa",
-            DataPropertyName = "idTarefa"
+            HeaderText = "Id",
+            DataPropertyName = "Id"
         });
 
         DGVTarefas.Columns.Add(new DataGridViewTextBoxColumn
         {
-            HeaderText = "Nome Tarefa",
-            DataPropertyName = "nomeTarefa"
+            HeaderText = "Tarefa",
+            DataPropertyName = "Tarefa"
         });
 
         DGVTarefas.Columns.Add(new DataGridViewTextBoxColumn
@@ -140,16 +151,16 @@ public class TarefasView : Form
 
         DGVTarefas.Columns.Add(new DataGridViewTextBoxColumn
         {
-            HeaderText = "Situacao",
+            HeaderText = "Status",
             DataPropertyName = "Situacao"
         });
 
         foreach (DataGridViewColumn column in DGVTarefas.Columns)
         {
-            if (column.DataPropertyName == "idTarefas")
+            if (column.DataPropertyName == "Id")
                 column.Width = 100;
             column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            if (column.DataPropertyName == "nomeTarefa")
+            if (column.DataPropertyName == "Tarefa")
                 column.Width = 200;
             column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             if (column.DataPropertyName == "Data")
@@ -166,15 +177,15 @@ public class TarefasView : Form
 
     private void ClickCadastrar(object? sender, EventArgs e)
     {
-        if (InpNome.Text.Length < 1 || InpData.Text.Length < 1 || InpHora.Text.Length < 1)
+        if (InpTarefa.Text == "" || InpData.Text == "" || InpHora.Text == "")
         {
             MessageBox.Show("Preencha todos os campos!");
         }
         else
         {
             bool situacao = false;
-            ControllerTarefas.Cadastrar(InpNome.Text, InpData.Text, InpHora.Text, situacao);
-            InpNome.Text = "";
+            ControllerTarefas.Cadastrar(InpTarefa.Text, InpData.Text, InpHora.Text, situacao);
+            InpTarefa.Text = "";
             InpData.Text = "";
             InpHora.Text = "";
         }
@@ -186,10 +197,17 @@ public class TarefasView : Form
     {
         int indice = DGVTarefas.SelectedRows[0].Index;
 
-        ControllerTarefas.AlterarTarefa(InpNome.Text, InpData.Text, InpHora.Text, indice);
-        InpNome.Text = "";
-        InpData.Text = "";
-        InpHora.Text = "";
+        if (InpTarefa.Text == "" || InpData.Text == "" || InpHora.Text == "")
+        {
+            MessageBox.Show("Preencha todos os campos!");
+        }
+        else
+        {
+            ControllerTarefas.AlterarTarefa(InpTarefa.Text, InpData.Text, InpHora.Text, indice);
+            InpTarefa.Text = "";
+            InpData.Text = "";
+            InpHora.Text = "";
+        }
 
         Listar();
     }
@@ -199,6 +217,15 @@ public class TarefasView : Form
         int indice = DGVTarefas.SelectedRows[0].Index;
 
         ControllerTarefas.DeletarTarefa(indice);
+
+        Listar();
+    }
+
+    private void ClickStatus(object? sender, EventArgs e)
+    {
+        int indice = DGVTarefas.SelectedRows[0].Index;
+
+        ControllerTarefas.AlterarStatus(indice);
 
         Listar();
     }
