@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("provaWinForms")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0aa2e5656367a1a7e99fe505b0ab0e911fcac75")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ffc370efff979f2e3d155242d5c4a386e6843886")]
 [assembly: System.Reflection.AssemblyProductAttribute("provaWinForms")]
 [assembly: System.Reflection.AssemblyTitleAttribute("provaWinForms")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

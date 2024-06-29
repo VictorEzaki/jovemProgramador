@@ -1,16 +1,20 @@
 using Model;
 using MySqlConnector;
 
-namespace ListTarefas
+namespace Repo
 {
     public class ListaTarefas
     {
         private static MySqlConnection conexao;
         public static List<Tarefas> tarefas = [];
 
+        public static List<Tarefas> ListarTarefas()
+        {
+            return tarefas;
+        }
         public static void InitConexao()
         {
-            string info = "server=localhost;database=tarefas; user id=root;password=''";
+            string info = "server=localhost;database=provawinforms; user id=root;password=''";
             conexao = new MySqlConnection(info);
 
             try
@@ -28,52 +32,57 @@ namespace ListTarefas
             conexao.Close();
         }
 
-        public static void Sincronizar()
+        public static List<Tarefas> Sincronizar()
         {
             InitConexao();
+
             string query = "SELECT * FROM tarefas";
             MySqlCommand command = new MySqlCommand(query, conexao);
             MySqlDataReader reader = command.ExecuteReader();
 
-            while (reader.Read())  
+            while (reader.Read())
             {
                 Tarefas tarefa = new Tarefas();
-                tarefa.IdTarefas = Convert.ToInt32(reader["IdTarefas"].ToString());
-                tarefa.Nome = reader["NomeTarefa"].ToString();
-                tarefa.Data = reader["Data"].ToString();
-                tarefa.Hora = reader["Hora"].ToString();
-                tarefa.Situacao = Convert.ToBoolean(reader["Situacao"].ToString());
-                tarefas.Add(tarefa);
 
+                tarefa.Id = Convert.ToInt32(reader["id"].ToString());
+                tarefa.Tarefa = reader["tarefa"].ToString();
+                tarefa.Data = reader["data"].ToString();
+                tarefa.Hora = reader["hora"].ToString();
+                tarefa.Situacao = reader["situacao"].ToString();
+                tarefas.Add(tarefa);
             }
+
             CloseConexao();
+
+            return tarefas;
         }
 
         public static void Cadastrar(Tarefas tarefa)
         {
             InitConexao();
 
-            string insert = "INSERT INTO tarefas(nomeTarefa, data, hora, situacao) VALUES(@NomeTarefa, @Data, @Hora, @Situacao)";
+            string insert = "INSERT INTO tarefas(tarefa, data, hora, situacao) VALUES(@Tarefa, @Data, @Hora, @Situacao)";
             MySqlCommand command = new MySqlCommand(insert, conexao);
+
             try
             {
-                if (tarefa.Nome == null || tarefa.Data == null || tarefa.Hora == null)
+                if (tarefa.Tarefa == null || tarefa.Data == null || tarefa.Hora == null)
                 {
-                    MessageBox.Show("Preencha todos os campos!");
+                    MessageBox.Show("Preencha todos os campos");
                 }
                 else
                 {
-                    command.Parameters.AddWithValue("@NomeTarefa", tarefa.Nome);
+                    command.Parameters.AddWithValue("@Tarefa", tarefa.Tarefa);
                     command.Parameters.AddWithValue("@Data", tarefa.Data);
                     command.Parameters.AddWithValue("@Hora", tarefa.Hora);
                     command.Parameters.AddWithValue("@Situacao", tarefa.Situacao);
 
                     int rowsAffected = command.ExecuteNonQuery();
+                    tarefa.Id = Convert.ToInt32(command.LastInsertedId);
 
                     if (rowsAffected > 0)
                     {
-                        tarefa.IdTarefas = Convert.ToInt32(command.LastInsertedId);
-                        MessageBox.Show("Tarefa Cadastrada com sucesso!");
+                        MessageBox.Show("Tarefa cadastrada com sucesso!");
                         tarefas.Add(tarefa);
                     }
                     else
@@ -84,50 +93,53 @@ namespace ListTarefas
             }
             catch (Exception e)
             {
-                MessageBox.Show("Deu ruim: " + e.Message);
+                MessageBox.Show(e.Message);
             }
 
             CloseConexao();
         }
 
-        public static void AlterarTarefa(string nome, string data, string hora, int indice)
+        public static void Alterar(string tarefa, string data, string hora, int indice)
         {
             InitConexao();
-            MessageBox.Show("iniciando");
-            string alterar = "UPDATE tarefas SET nomeTarefa = @Nome, hora = @Hora, data = @Data WHERE idTarefas = @IdTarefas";
-            MySqlCommand command = new MySqlCommand(alterar, conexao);
-            Tarefas tarefa = tarefas[indice];
+
+            string update = "UPDATE tarefas SET tarefa = @Tarefa, data = @Data, hora = @Hora WHERE id = @Id";
+            MySqlCommand command = new MySqlCommand(update, conexao);
+            Tarefas task = tarefas[indice];
+
             try
             {
-                if (nome != null || hora != null || data != null)
+                if (tarefa == null || data == null || hora == null)
                 {
-                    command.Parameters.AddWithValue("@IdTarefas", tarefa.IdTarefas);
-                    command.Parameters.AddWithValue("@Nome", nome);
+                    MessageBox.Show("Tarefa não encontrada");
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@Id", task.Id);
+                    command.Parameters.AddWithValue("@Tarefa", tarefa);
                     command.Parameters.AddWithValue("@Data", data);
                     command.Parameters.AddWithValue("@Hora", hora);
-                    command.Parameters.AddWithValue("@Situacao", tarefa.Situacao);
+
                     int rowsAffected = command.ExecuteNonQuery();
 
                     if (rowsAffected > 0)
                     {
-                        tarefa.Nome = nome;
-                        tarefa.Hora = hora;
-                        tarefa.Data = data;
+                        task.Tarefa = tarefa;
+                        task.Data = data;
+                        task.Hora = hora;
                     }
                     else
                     {
                         MessageBox.Show(rowsAffected.ToString());
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Usuário não encontrado");
+                    MessageBox.Show("Tarefa alterada com sucesso!");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro durante a execução do comando: " + ex.Message);
+                MessageBox.Show(ex.Message);
             }
+
             CloseConexao();
         }
 
@@ -135,19 +147,52 @@ namespace ListTarefas
         {
             InitConexao();
 
-            string delete = "DELETE FROM tarefas WHERE idTarefas = @IdTarefas";
+            string delete = "DELETE FROM tarefas WHERE id = @Id";
             MySqlCommand command = new MySqlCommand(delete, conexao);
-            command.Parameters.AddWithValue("@IdTarefas", tarefas[indice].IdTarefas);
+            command.Parameters.AddWithValue("@Id", tarefas[indice].Id);
 
             int rowsAffected = command.ExecuteNonQuery();
             if (rowsAffected > 0)
             {
                 tarefas.RemoveAt(indice);
-                MessageBox.Show("Tarefa deletada com sucesso");
+                MessageBox.Show("Tarefa deletada com sucesso!");
             }
             else
             {
                 MessageBox.Show("Tarefa não encontrada");
+            }
+
+            CloseConexao();
+        }
+
+        public static void AlterarStatus(int indice, string situacao)
+        {
+            InitConexao();
+
+            string update = "UPDATE tarefas SET situacao = @Situacao WHERE id = @Id";
+            MySqlCommand command = new MySqlCommand(update, conexao);
+            Tarefas tarefa = tarefas[indice];
+
+            try
+            {
+                command.Parameters.AddWithValue("@Id", tarefa.Id);
+                command.Parameters.AddWithValue("@Situacao", situacao);
+
+                int rowsAffected = command.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    tarefa.Situacao = situacao;
+                    MessageBox.Show("Status alterado com sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possível aterar o status da tarefa");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Deu ruim");
             }
 
             CloseConexao();
